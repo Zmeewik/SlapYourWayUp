@@ -1,13 +1,18 @@
-using System;
+using System.IO;
 using UnityEngine;
 
 public class baseNPC : MonoBehaviour
 {
     [SerializeField] private float _timeUpdateScore;
     [SerializeField] private MainLoop _mainLoop;
+    [SerializeField] private SerchObject _serchObject;
+
+    [SerializeField] private bool _changePlace = false;
 
     private WorkPlace _currentWorkPlace = null;
     private float _time = 0;
+
+    private Movement _movement;
 
     public bool IsWork
     {
@@ -33,6 +38,11 @@ public class baseNPC : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        _movement = GetComponent<Movement>();
+    }
+
     private void Update()
     {
         if (IsWork)
@@ -47,6 +57,26 @@ public class baseNPC : MonoBehaviour
             {
                 _time += Time.deltaTime;
             }
+        }
+        else if(!IsWork)
+        {
+            if(_currentWorkPlace == null)
+            {
+                Vector3 newPlace = _serchObject.SearchWorkPlace(transform.position);
+                _movement.ChangeTarget(newPlace);
+            }
+        }
+
+        if(!_movement.IsEndTarget)
+        {
+            _movement.Move();
+        }
+
+        if(_changePlace)
+        {
+            _currentWorkPlace = null;
+            Vector3 newPlace = _serchObject.SearchWorkPlace(transform.position);
+            _movement.ChangeTarget(newPlace);
         }
     }
 }
