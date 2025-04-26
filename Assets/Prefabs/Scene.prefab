@@ -561,6 +561,7 @@ GameObject:
   - component: {fileID: 6791974995859023566}
   - component: {fileID: 6607329100871529136}
   - component: {fileID: 3645220096647731607}
+  - component: {fileID: 6038443464318629711}
   m_Layer: 0
   m_Name: Controller
   m_TagString: Untagged
@@ -629,6 +630,208 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 7480528716078409131}
+--- !u!114 &6038443464318629711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895517083736737636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cabf386dfa5d65343bfb2eea5b4f4410, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Achivement
+    audioclip: {fileID: 8300000, guid: 708cc07f8c935484da99ab66baa3b414, type: 3}
+    volume: 0.1
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 0}
+  - name: Achivement2
+    audioclip: {fileID: 8300000, guid: b670f4188fea2cb44ae0928ff4df1c5c, type: 3}
+    volume: 0.1
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 0}
+  - name: Achivement2
+    audioclip: {fileID: 8300000, guid: ec330b12a05b17c4ab0b7fbd69ed417e, type: 3}
+    volume: 0.1
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 0}
+  - name: Music1
+    audioclip: {fileID: 8300000, guid: 9ce99c49da293f244b3cf681d569d289, type: 3}
+    volume: 0.1
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 0}
+  - name: Music2
+    audioclip: {fileID: 0}
+    volume: 0.1
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 0}
+  - name: Music3
+    audioclip: {fileID: 0}
+    volume: 0.1
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 0}
+  - name: GameOver
+    audioclip: {fileID: 8300000, guid: aef63eb19d6f46a43b37fa6d0f00a3ca, type: 3}
+    volume: 0.1
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 0}
+  - name: Fan
+    audioclip: {fileID: 8300000, guid: 3e2f101fc62d3134693a8c0718be6c5d, type: 3}
+    volume: 0.1
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 0}
+  - name: Keyboard
+    audioclip: {fileID: 8300000, guid: 75907303d10962343a5213154a03fbea, type: 3}
+    volume: 0.1
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 0}
+  - name: Phone
+    audioclip: {fileID: 8300000, guid: d71ab1f6d17ba34498983884c1de7c05, type: 3}
+    volume: 0
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 0}
+  - name: CoffeMashine
+    audioclip: {fileID: 8300000, guid: ea21b3bfb47c79a40b830e8a5dab2cbd, type: 3}
+    volume: 0
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 0}
+  - name: OfficeAmbient
+    audioclip: {fileID: 8300000, guid: d060129b40604ad408dff439614e5258, type: 3}
+    volume: 0.1
+    audiosource: {fileID: 0}
+    loop: 1
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 0}
+  - name: Elevator
+    audioclip: {fileID: 8300000, guid: 70b88660777ee1648aea95ca7580333f, type: 3}
+    volume: 0.1
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 0}
+  - name: StrongPunch
+    audioclip: {fileID: 8300000, guid: ed0c2881c0fb1fe4381bff1c2e44c140, type: 3}
+    volume: 0.1
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 0}
+  - name: Paper
+    audioclip: {fileID: 8300000, guid: 1dd9f07995ed1b64f8dd592601bf3261, type: 3}
+    volume: 0.1
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 0}
+  - name: 
+    audioclip: {fileID: 0}
+    volume: 0
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 0}
+  - name: Steps
+    audioclip: {fileID: 8300000, guid: 86feaab9cd60ed8459f4050f961f754b, type: 3}
+    volume: 0.1
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 0}
+  - name: StrongSlap
+    audioclip: {fileID: 8300000, guid: 34e82424e58ca4743ba36500705bd4d5, type: 3}
+    volume: 0.1
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 0}
+  - name: OfficeAmbient2
+    audioclip: {fileID: 8300000, guid: 33fb2d24712e59441a60817c25d57699, type: 3}
+    volume: 0
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 0}
+  - name: Broken
+    audioclip: {fileID: 8300000, guid: d2feb8b79a53a5d41b9ca6274062dd41, type: 3}
+    volume: 0.1
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 0}
+  - name: 
+    audioclip: {fileID: 0}
+    volume: 0
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 0}
+  - name: 
+    audioclip: {fileID: 0}
+    volume: 0
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 0}
+  - name: 
+    audioclip: {fileID: 0}
+    volume: 0
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 0}
+  - name: 
+    audioclip: {fileID: 0}
+    volume: 0
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 0}
+  - name: 
+    audioclip: {fileID: 0}
+    volume: 0
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 0}
+  - name: 
+    audioclip: {fileID: 0}
+    volume: 0
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 0}
+  - name: 
+    audioclip: {fileID: 0}
+    volume: 0
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 0}
 --- !u!1 &1905074208865833233
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,7 +979,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2788299208528518592}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.93538797, y: -1.93, z: -5.3289948}
   m_LocalScale: {x: 0.63761, y: 0.16816327, z: 0.63761}
   m_ConstrainProportionsScale: 0

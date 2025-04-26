@@ -6,8 +6,12 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    //Массив звуков
+    //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     public Sound[] sounds;
+    static public SoundManager instance;
+
+
+
     private void Awake()
     {
         foreach (Sound s in sounds)
@@ -18,8 +22,10 @@ public class SoundManager : MonoBehaviour
             s.audiosource.loop = s.loop;
             s.audiosource.outputAudioMixerGroup = s.OutputAudioMixerGroup;
         }
+
+        instance = this;
     }
-    //Сменить громкость конкретного звука
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     public void VolumeChange(string name, float volume)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
@@ -27,7 +33,7 @@ public class SoundManager : MonoBehaviour
             return;
         s.audiosource.volume = volume;
     }
-    //Проиграть звук
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
     public void Play(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
@@ -39,7 +45,7 @@ public class SoundManager : MonoBehaviour
      
             s.audiosource.Play();
     }
-    //Остановить звук
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
     public void Pause(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
@@ -50,7 +56,7 @@ public class SoundManager : MonoBehaviour
         else if (PlayerPrefs.GetInt("Sound") == 0)
             s.audiosource.Pause();
     }
-    //Проиграть звук сначала
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     public void PlayFromStart(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
