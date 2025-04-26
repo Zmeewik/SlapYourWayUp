@@ -36,7 +36,7 @@ public class Mechanism : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        mechanismScript.Activate(other);
+        mechanismScript.Activate(other, 1);
     }
 
 }

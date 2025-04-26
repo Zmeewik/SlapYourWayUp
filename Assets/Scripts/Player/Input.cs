@@ -43,7 +43,7 @@ public class InputSctipt : MonoBehaviour
         float moveX = Input.GetAxis("Horizontal");
         float moveZ = Input.GetAxis("Vertical");
         if(player != null)
-            player.OnMove(new Vector2(moveX, moveZ));
+            player.OnMove(new Vector2(moveX, moveZ).normalized);
 
         //Jump
         if (Input.GetKeyDown(KeyCode.Space))
@@ -58,6 +58,8 @@ public class InputSctipt : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             chargeTimer += Time.deltaTime;
+            if(punchScr != null)
+                punchScr.PunchHandle(chargeTimer, false);
         }
         //End LMC
         if (Input.GetMouseButtonUp(0)) // Отпускание ЛКМ
@@ -66,11 +68,15 @@ public class InputSctipt : MonoBehaviour
             {
                 //Weak hit
                 chargeTimer = 0;
+                if(punchScr != null)
+                    punchScr.PunchHandle(chargeTimer, true);
             }
             else
             {
                 //Strong hit
                 chargeTimer = 0;
+                if(punchScr != null)
+                    punchScr.PunchHandle(chargeTimer, true);
             }
         }
 

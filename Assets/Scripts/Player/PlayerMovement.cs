@@ -165,6 +165,7 @@ public class PlayerMovement : MonoBehaviour, IMovable
         
         //Speed always goes down
         BuildSpeed("none");
+        print(currentState);
         
         //Current states of movement
         switch(currentState)
