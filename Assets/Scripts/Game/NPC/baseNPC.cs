@@ -7,8 +7,6 @@ public class baseNPC : MonoBehaviour
     [SerializeField] private MainLoop _mainLoop;
     [SerializeField] private SerchObject _serchObject;
 
-    [SerializeField] private bool _changePlace = false;
-
     private WorkPlace _currentWorkPlace = null;
     private float _time = 0;
 
@@ -18,7 +16,7 @@ public class baseNPC : MonoBehaviour
     {
         get
         {
-            return _currentWorkPlace != null;
+            return _currentWorkPlace != null && _movement.IsEndTarget;
         }
     }
 
@@ -26,7 +24,8 @@ public class baseNPC : MonoBehaviour
     {
         if (other.TryGetComponent(out WorkPlace workPlace) && _currentWorkPlace == null)
         {
-            _currentWorkPlace = workPlace;
+            if(workPlace.CurrentWorker == this)
+                _currentWorkPlace = workPlace;
         }
     }
 
@@ -34,6 +33,7 @@ public class baseNPC : MonoBehaviour
     {
         if (other.TryGetComponent(out WorkPlace workPlace) && _currentWorkPlace == workPlace)
         {
+            workPlace.Deactivate();
             _currentWorkPlace = null;
         }
     }
@@ -60,23 +60,20 @@ public class baseNPC : MonoBehaviour
         }
         else if(!IsWork)
         {
-            if(_currentWorkPlace == null)
+            if(_currentWorkPlace == null && !_movement.IsMove)
             {
-                Vector3 newPlace = _serchObject.SearchWorkPlace(transform.position);
-                _movement.ChangeTarget(newPlace);
+                WorkPlace newPlace = _serchObject.SearchWorkPlace(transform.position);
+                newPlace.SetWorker(this);
+                _movement.ChangeTarget(newPlace.transform.position);
             }
         }
+    }
 
-        if(!_movement.IsEndTarget)
+    private void FixedUpdate()
+    {
+        if (!_movement.IsEndTarget)
         {
             _movement.Move();
-        }
-
-        if(_changePlace)
-        {
-            _currentWorkPlace = null;
-            Vector3 newPlace = _serchObject.SearchWorkPlace(transform.position);
-            _movement.ChangeTarget(newPlace);
         }
     }
 }

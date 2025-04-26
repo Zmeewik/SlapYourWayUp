@@ -14,13 +14,13 @@ public class SerchObject : MonoBehaviour
                 _workPlaces.Add(wrk);
     }
 
-    public Vector3 SearchWorkPlace(Vector3 place)
+    public WorkPlace SearchWorkPlace(Vector3 place)
     {
-        Vector3 minLen = Vector3.down;
+        WorkPlace minLen = null;
 
         foreach (WorkPlace wrk in _workPlaces)
-            if ((wrk.transform.position - place).magnitude < minLen.magnitude || minLen == Vector3.down)
-                minLen = wrk.transform.position;
+            if ((minLen == null || (wrk.transform.position - place).magnitude < minLen.transform.position.magnitude) && !wrk.IsBusy)
+                minLen = wrk;
 
         return minLen;
     }

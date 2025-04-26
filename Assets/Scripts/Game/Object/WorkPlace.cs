@@ -6,8 +6,13 @@ public class WorkPlace : MonoBehaviour
     [SerializeField] private float _chanceBreake;
     [SerializeField] private float _timeLoopBreake;
 
+    private bool _isBusy = false;
+    private baseNPC _currentWorker;
+
     public bool IsLifeObject { get; private set; }
     public float ScoreAddPlace => _scoreAdd;
+    public bool IsBusy => _isBusy;
+    public baseNPC CurrentWorker => _currentWorker;
 
     private float _time = 0;
 
@@ -37,5 +42,17 @@ public class WorkPlace : MonoBehaviour
                 _time += Time.deltaTime;
             }
         }
+    }
+
+    public void Deactivate()
+    {
+        _isBusy = false;
+        _currentWorker = null;
+    }
+
+    public void SetWorker(baseNPC npc)
+    {
+        _currentWorker = npc;
+        _isBusy = true;
     }
 }
