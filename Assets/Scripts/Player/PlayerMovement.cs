@@ -718,6 +718,7 @@ public class PlayerMovement : MonoBehaviour, IMovable
 
             //Handle main logic
             //HandleWall(curnormal, contacts[indexesWall[0]]);
+            OnLand();
         }
         //Ceiling contact main
         else if(contactSurfaces[2] > 0)
