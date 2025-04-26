@@ -24,7 +24,6 @@ public class Punch : MonoBehaviour
     //Main punch handle
     public void PunchHandle(float time, bool hit)
     {
-        print("punch: " + time);
         if(hit)
         {
             PunchAnything(currentForce, currentProgress);
@@ -68,8 +67,7 @@ public class Punch : MonoBehaviour
                 Vector3 forceDirection = hit.point - cameraHolder.position;
                 forceDirection = forceDirection.normalized;
                 //Push
-                print("punch force: " + forceDirection * (minPushForce + (maxPushForce - minPushForce) * force));
-                rb.AddForce(forceDirection * force * maxPushForce, ForceMode.Impulse); // сила толчка 5f
+                rb.AddForce(forceDirection * (minPushForce + (maxPushForce - minPushForce) * force), ForceMode.Impulse); // сила толчка 5f
             }
             
             //Activate
