@@ -160,7 +160,7 @@ public class PlayerMovement : MonoBehaviour, IMovable
     private void FixedUpdate()
     {
         Vector3 horizontalVel = new Vector3(rb.velocity.x, 0, rb.velocity.z);
-        //DebugOutput.Instance.Output("Скорость: " + horizontalVel.magnitude.ToString("F2"), 1);
+        DebugOutput.Instance.Output("Скорость: " + horizontalVel.magnitude.ToString("F2"), 1);
         //DebugOutput.Instance.Output("Максимальная скорость: " + currentMaxSpeed.ToString("F2"), 2);
         
         //Speed always goes down

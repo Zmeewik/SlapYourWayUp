@@ -12,6 +12,7 @@ public class InputSctipt : MonoBehaviour
     [SerializeField] private GameObject rotatableObject;
     private IMovable player;
     private IRotatable cameraObject;
+    [SerializeField] private Punch punchScr;
 
 
     void Start()
