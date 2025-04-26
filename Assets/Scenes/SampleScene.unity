@@ -732,10 +732,10 @@ MonoBehaviour:
   surfaceHandler: {fileID: 64991666}
   speedRotation: 1
   sensitivity: 1
-  acceleration: 30
+  acceleration: 100
   decceleration: 30
-  maxSpeed: 5
-  jumpForce: 5
+  maxSpeed: 10
+  jumpForce: 17
   dashDistance: 0
   dashTime: 0
   airControlMultiplier: 0.4
