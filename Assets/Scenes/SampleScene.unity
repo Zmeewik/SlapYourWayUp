@@ -376,7 +376,7 @@ Transform:
   m_GameObject: {fileID: 215908016}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -2, z: 0}
   m_LocalScale: {x: 4.2012706, y: 4.2012706, z: 4.2012706}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -969,6 +969,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: MotivatedObject
       objectReference: {fileID: 0}
+    - target: {fileID: 6266346086988182464, guid: 9018698535318b64fa3bc7989b19c5d1, type: 3}
+      propertyPath: phrases.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6266346086988182464, guid: 9018698535318b64fa3bc7989b19c5d1, type: 3}
+      propertyPath: phrases.Array.data[3]
+      value: "\u041E\u0439-\u0451\u0439, \u043F\u043E\u0445\u043E\u0436\u0435, \u0443
+        \u043C\u0435\u043D\u044F \u0447\u0442\u043E-\u0442\u043E \u0441 \u043C\u043E\u0442\u0438\u0432\u0430\u0446\u0438\u0435\u0439\u2026"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6266346086988182464, guid: 9018698535318b64fa3bc7989b19c5d1, type: 3}
+      propertyPath: phrases.Array.data[4]
+      value: "\u041E\u0439-\u0451\u0439, \u043F\u043E\u0445\u043E\u0436\u0435, \u0443
+        \u043C\u0435\u043D\u044F \u0447\u0442\u043E-\u0442\u043E \u0441 \u043C\u043E\u0442\u0438\u0432\u0430\u0446\u0438\u0435\u0439\u2026"
+      objectReference: {fileID: 0}
     - target: {fileID: 7975118165697657051, guid: 9018698535318b64fa3bc7989b19c5d1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.47
@@ -1097,6 +1111,7 @@ GameObject:
   - component: {fileID: 1443258982}
   - component: {fileID: 1443258981}
   - component: {fileID: 1443258983}
+  - component: {fileID: 1443258985}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1186,7 +1201,7 @@ Transform:
   m_GameObject: {fileID: 1443258975}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.97, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1313,6 +1328,18 @@ MonoBehaviour:
   forceBar: {fileID: 327810016}
   punchDistance: 10
   fillImage: {fileID: 211405955}
+--- !u!114 &1443258985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443258975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74237c5e158be5545ab8b0f48bd31831, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1699845703
 GameObject:
   m_ObjectHideFlags: 0
@@ -1628,7 +1655,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 280304268324355048, guid: 837644da512e0454bbc36f9017692bd4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.2989019
+      value: -1.93
       objectReference: {fileID: 0}
     - target: {fileID: 280304268324355048, guid: 837644da512e0454bbc36f9017692bd4, type: 3}
       propertyPath: m_LocalPosition.z
