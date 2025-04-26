@@ -188,6 +188,7 @@ MonoBehaviour:
   movableObject: {fileID: 1443258975}
   rotatableObject: {fileID: 731904494}
   punchScr: {fileID: 1443258983}
+  coffeeThrow: {fileID: 1443258986}
 --- !u!114 &64991668
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -969,6 +970,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MotivatedObject
       objectReference: {fileID: 0}
+    - target: {fileID: 5963347410551056009, guid: 9018698535318b64fa3bc7989b19c5d1, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 6266346086988182464, guid: 9018698535318b64fa3bc7989b19c5d1, type: 3}
       propertyPath: phrases.Array.size
       value: 3
@@ -1022,6 +1027,10 @@ PrefabInstance:
     - target: {fileID: 7975118165697657051, guid: 9018698535318b64fa3bc7989b19c5d1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9091293654377931339, guid: 9018698535318b64fa3bc7989b19c5d1, type: 3}
+      propertyPath: m_TagString
+      value: Motivation
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1112,6 +1121,7 @@ GameObject:
   - component: {fileID: 1443258981}
   - component: {fileID: 1443258983}
   - component: {fileID: 1443258985}
+  - component: {fileID: 1443258986}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1328,6 +1338,7 @@ MonoBehaviour:
   forceBar: {fileID: 327810016}
   punchDistance: 10
   fillImage: {fileID: 211405955}
+  coffeScr: {fileID: 1443258986}
 --- !u!114 &1443258985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1340,6 +1351,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74237c5e158be5545ab8b0f48bd31831, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1443258986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443258975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b53ce2813946de34290320b048aa8bce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLoads: 3
+  coffee: {fileID: 6583808503224726773, guid: 227b9a9bd4f66364288b6a9d7e94ea78, type: 3}
+  throwForce: 50
 --- !u!1 &1699845703
 GameObject:
   m_ObjectHideFlags: 0
@@ -1591,6 +1617,10 @@ PrefabInstance:
     - target: {fileID: 5979520867533919688, guid: 7d9b8b21560aec242aa2431f431784e0, type: 3}
       propertyPath: m_Name
       value: BrokenObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 5979520867533919688, guid: 7d9b8b21560aec242aa2431f431784e0, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 6502519232652958151, guid: 7d9b8b21560aec242aa2431f431784e0, type: 3}
       propertyPath: m_AnchorMax.y

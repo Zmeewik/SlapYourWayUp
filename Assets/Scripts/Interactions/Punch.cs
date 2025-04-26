@@ -17,6 +17,7 @@ public class Punch : MonoBehaviour
     [SerializeField] private Slider forceBar;
     [SerializeField] private float punchDistance;
     [SerializeField] Image fillImage;
+    [SerializeField] CoffeeThrow coffeScr;
     float currentForce = 0;
     float currentProgress = 0;
 
@@ -78,6 +79,12 @@ public class Punch : MonoBehaviour
                 var col = GetComponent<Collider>();
                 if(col != null)
                     activatable.Activate(col, progress);
+                print(hit.collider.tag);
+                if(hit.collider.tag == "Motivation")
+                {
+                    print(hit.collider.tag);
+                    coffeScr.AddLoad();
+                }
             }
         }
     }

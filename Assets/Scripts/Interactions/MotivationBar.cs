@@ -89,4 +89,16 @@ public class MotivationBar : MonoBehaviour, IInteractable
     {   
         textObject.SetActive(false);
     }
+
+    //If gets coffee object break it, make effect, sound and motivation charge
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "Coffee")
+        {
+            motivation = maxMotivation;
+            currenTime = timeNoChange;
+            Destroy(collision.gameObject);
+            print("coffeed");
+        }
+    }
 }
