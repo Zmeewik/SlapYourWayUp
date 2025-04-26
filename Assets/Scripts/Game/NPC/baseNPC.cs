@@ -11,6 +11,7 @@ public class baseNPC : MonoBehaviour
     private float _time = 0;
 
     private Movement _movement;
+    private MotivationBar _motivation;
 
     public bool IsWork
     {
@@ -41,6 +42,7 @@ public class baseNPC : MonoBehaviour
     private void Start()
     {
         _movement = GetComponent<Movement>();
+        _motivation = GetComponent<MotivationBar>();
     }
 
     private void Update()
@@ -49,7 +51,7 @@ public class baseNPC : MonoBehaviour
         {
             if (_time >= _timeUpdateScore)
             {
-                _mainLoop.ScoreAdd(_currentWorkPlace.ScoreAddPlace);
+                _mainLoop.ScoreAdd(_currentWorkPlace.ScoreAddPlace * _motivation.CurrentMotivation);
                 _time = 0;
                 Debug.Log("Score+: " + _currentWorkPlace.ScoreAddPlace);
             }

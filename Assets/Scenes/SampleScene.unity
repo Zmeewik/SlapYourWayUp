@@ -2452,7 +2452,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed53b18192c74964783a6f150ea4ffca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreAdd: 10
+  _scoreAdd: 2
   _chanceBreake: 0
   _timeLoopBreake: 10
 --- !u!23 &1103889137
@@ -2881,7 +2881,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed53b18192c74964783a6f150ea4ffca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreAdd: 10
+  _scoreAdd: 2
   _chanceBreake: 0
   _timeLoopBreake: 10
 --- !u!23 &1208699352
@@ -5059,7 +5059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed53b18192c74964783a6f150ea4ffca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreAdd: 10
+  _scoreAdd: 2
   _chanceBreake: 0
   _timeLoopBreake: 10
 --- !u!23 &2101227441
@@ -5390,6 +5390,10 @@ PrefabInstance:
     - target: {fileID: 416233086487129174, guid: 1d2f955a1ef516448922c53f03317a06, type: 3}
       propertyPath: m_Name
       value: WorkPlace
+      objectReference: {fileID: 0}
+    - target: {fileID: 857865150618139212, guid: 1d2f955a1ef516448922c53f03317a06, type: 3}
+      propertyPath: _scoreAdd
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2053354646369768842, guid: 1d2f955a1ef516448922c53f03317a06, type: 3}
       propertyPath: m_LocalPosition.x

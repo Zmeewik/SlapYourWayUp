@@ -29,6 +29,8 @@ public class MotivationBar : MonoBehaviour, IInteractable
     [SerializeField] float phraseTime;
     float currentPhraseTime = 0;
 
+    public float CurrentMotivation => motivation;
+
     public void Activate(Collider goal, float force)
     {
         motivation += Math.Clamp(force, minMotivationAdd, maxMotivationAdd);
