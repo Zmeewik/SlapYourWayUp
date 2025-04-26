@@ -22,6 +22,11 @@ public class PlayerCamera : MonoBehaviour, IRotatable
     Vector2 rotationVector;
     float xRotation;
 
+    private void Start()
+    {
+        Cursor.visible = false;
+    } 
+
     //Update camera position and rotation at late update
     public void LateUpdate()
     {

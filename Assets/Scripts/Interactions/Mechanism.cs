@@ -18,25 +18,12 @@ public class Mechanism : MonoBehaviour
         var implementScr = actionImplemention.GetComponent<IInteractable>();
         mechanismScript = implementScr;
         var colComponent = actionImplemention.GetComponent<Collider>();
-        
-        //Change states of interaction and disable unneaded
-        switch(interaction)
-        {
-            case Interaction.Trigger:
-                if(colComponent is not null)
-                    colComponent.enabled = true;
-            break;
-            case Interaction.Lever:
-                if(colComponent is not null)
-                    colComponent.enabled = false;
-                break;
-        }
     }
 
 
     void OnTriggerEnter(Collider other)
     {
-        mechanismScript.Activate(other);
+        mechanismScript.Activate(other, 1);
     }
 
 }
