@@ -3288,6 +3288,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 244468766209723457, guid: 9efd844f17a77f24fb7efade4863b116, type: 3}
+      propertyPath: _timeUpdateScore
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 1685227972286024528, guid: 9efd844f17a77f24fb7efade4863b116, type: 3}
       propertyPath: sounds.Array.data[13].name
       value: Slap
@@ -3312,9 +3316,21 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2078976056656045412, guid: 9efd844f17a77f24fb7efade4863b116, type: 3}
+      propertyPath: _timeUpdateScore
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 2803650754805760588, guid: 9efd844f17a77f24fb7efade4863b116, type: 3}
       propertyPath: _stoppingDistance
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461897574588104283, guid: 9efd844f17a77f24fb7efade4863b116, type: 3}
+      propertyPath: _scoreAdd
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461897574588104283, guid: 9efd844f17a77f24fb7efade4863b116, type: 3}
+      propertyPath: _timeLoopBreake
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3637880855339622523, guid: 9efd844f17a77f24fb7efade4863b116, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3380,6 +3396,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7189458619643397699, guid: 9efd844f17a77f24fb7efade4863b116, type: 3}
+      propertyPath: _scoreAdd
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189458619643397699, guid: 9efd844f17a77f24fb7efade4863b116, type: 3}
+      propertyPath: _timeLoopBreake
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7348932762939601315, guid: 9efd844f17a77f24fb7efade4863b116, type: 3}
       propertyPath: groundLayer.m_Bits
       value: 64
@@ -3387,6 +3411,22 @@ PrefabInstance:
     - target: {fileID: 7926278083490615076, guid: 9efd844f17a77f24fb7efade4863b116, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8016686939833804717, guid: 9efd844f17a77f24fb7efade4863b116, type: 3}
+      propertyPath: Levels.Array.data[0]._maxScore
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8016686939833804717, guid: 9efd844f17a77f24fb7efade4863b116, type: 3}
+      propertyPath: Levels.Array.data[0].stars.Array.data[0]
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8016686939833804717, guid: 9efd844f17a77f24fb7efade4863b116, type: 3}
+      propertyPath: Levels.Array.data[0].stars.Array.data[1]
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8016686939833804717, guid: 9efd844f17a77f24fb7efade4863b116, type: 3}
+      propertyPath: Levels.Array.data[0].stars.Array.data[2]
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8335976225177014886, guid: 9efd844f17a77f24fb7efade4863b116, type: 3}
       propertyPath: m_LocalPosition.z
