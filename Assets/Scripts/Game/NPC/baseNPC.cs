@@ -67,9 +67,10 @@ public class baseNPC : MonoBehaviour
                 WorkPlace newPlace = _serchObject.SearchWorkPlace(transform.position);
 
                 if(newPlace != null)
+                {
                     newPlace.SetWorker(this);
-
-                _movement.ChangeTarget(newPlace.transform.position);
+                    _movement.ChangeTarget(newPlace.transform.position);
+                } 
             }
         }
     }
