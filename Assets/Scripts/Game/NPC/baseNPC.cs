@@ -53,7 +53,6 @@ public class baseNPC : MonoBehaviour
             {
                 _mainLoop.ScoreAdd(_currentWorkPlace.ScoreAddPlace * _motivation.CurrentMotivation);
                 _time = 0;
-                Debug.Log("Score+: " + _currentWorkPlace.ScoreAddPlace);
             }
             else
             {
