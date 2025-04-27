@@ -70,12 +70,16 @@ public class Punch : MonoBehaviour
                 forceDirection = forceDirection.normalized;
                 //Push
                 rb.AddForce(forceDirection * (minPushForce + (maxPushForce - minPushForce) * force), ForceMode.Impulse); // сила толчка 5f
+                //Hit sound
+                if(force < 0.5)
+                    SoundManager.instance.Play("");
             }
             
             //Activate
             var activatable = hit.collider.GetComponent<IInteractable>();
             if (activatable != null)
             {
+
                 var col = GetComponent<Collider>();
                 if(col != null)
                     activatable.Activate(col, progress);

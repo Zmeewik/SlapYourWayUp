@@ -28,8 +28,11 @@ public class MainLoop : MonoBehaviour
     void Start()
     {
         var num = (int)(UnityEngine.Random.value * 3) + 1;
-        print(num);
+        PlayerPrefs.SetInt("Sound", 0);
+        PlayerPrefs.SetInt("Music", 0);
+        PlayerPrefs.Save();
         SoundManager.instance.Play("Music"+num);
+        SoundManager.instance.Play("OfficeAmbient");
     }
 
     void Update()

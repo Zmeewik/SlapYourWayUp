@@ -42,8 +42,10 @@ public class SoundManager : MonoBehaviour
         if (s.isMusic && PlayerPrefs.GetInt("Music") == 0)
             s.audiosource.Play();
         else if (PlayerPrefs.GetInt("Sound") == 0)
-     
+        {
+            print("played");
             s.audiosource.Play();
+        }
     }
     //���������� ����
     public void Pause(string name)

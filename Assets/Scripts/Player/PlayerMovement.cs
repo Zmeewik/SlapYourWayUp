@@ -26,6 +26,7 @@ public class PlayerMovement : MonoBehaviour, IMovable
     [SerializeField] float decceleration;
     [SerializeField] float maxSpeed;
     //Move handle
+    bool moveSounded = false;
     Vector2 moveVector = Vector2.zero;
 
     [Header("Jump")]
@@ -196,12 +197,29 @@ public class PlayerMovement : MonoBehaviour, IMovable
 
         if(moveVector != Vector2.zero)
         {
+            if(!moveSounded && currentState == BodyState.Moving)
+            {
+                moveSounded = true;
+                SoundManager.instance.Play("Steps");
+            }
+            else if(currentState != BodyState.Moving)
+            {
+                SoundManager.instance.Pause("Steps");
+            }
             //Trajectory projection at the ground surface
             Vector3 surfaceForward = Vector3.ProjectOnPlane(transform.forward, groundNormal).normalized;
             Vector3 surfaceRight = Vector3.ProjectOnPlane(transform.right, groundNormal).normalized;
 
             rb.AddForce(surfaceRight * moveVector.x * acceleration * airMultiplyer, ForceMode.Acceleration);
             rb.AddForce(surfaceForward * moveVector.y * acceleration * airMultiplyer, ForceMode.Acceleration);
+        }
+        else
+        {
+            if(moveSounded)
+            {
+                moveSounded = false;
+                SoundManager.instance.Pause("Steps");
+            }
         }
     }
 
@@ -608,6 +626,7 @@ public class PlayerMovement : MonoBehaviour, IMovable
             {
                 print("In the air");
                 rb.useGravity = true;
+                SoundManager.instance.Play("Jump");
                 isGrounded = IsGrounded.InAir;
                 groundNormal = Vector3.up;
                 currentState = BodyState.InAir;
@@ -620,6 +639,7 @@ public class PlayerMovement : MonoBehaviour, IMovable
             if(isGrounded == IsGrounded.Grounded)
                 return;
             print("At the ground");
+            SoundManager.instance.Play("Land");
             isGrounded = IsGrounded.Grounded;
 
             //Additional land force
