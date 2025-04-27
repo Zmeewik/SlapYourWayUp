@@ -177,6 +177,9 @@ public class PlayerMovement : MonoBehaviour, IMovable
                 Drag();
                 CounterMovement();
             break;
+            case BodyState.WallRunning:
+                WallSlide();
+                break;
             case BodyState.InAir:
                 Moving(airControlMultiplier);
                 RotateBody();
@@ -737,8 +740,7 @@ public class PlayerMovement : MonoBehaviour, IMovable
             var curnormal = FindClosestTo90(indexesWall, contacts);
 
             //Handle main logic
-            //HandleWall(curnormal, contacts[indexesWall[0]]);
-            OnLand();
+            OnFly();
         }
         //Ceiling contact main
         else if(contactSurfaces[2] > 0)
