@@ -418,6 +418,38 @@ PrefabInstance:
       propertyPath: _result
       value: 
       objectReference: {fileID: 1898270304}
+    - target: {fileID: 5889777586666416696, guid: d66b000165b0c1c4cbbf337f142bdb32, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.9454375
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889777586666416696, guid: d66b000165b0c1c4cbbf337f142bdb32, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.126
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889777586666416696, guid: d66b000165b0c1c4cbbf337f142bdb32, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.9454375
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889777586666416696, guid: d66b000165b0c1c4cbbf337f142bdb32, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.126
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889777586666416696, guid: d66b000165b0c1c4cbbf337f142bdb32, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 160
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889777586666416696, guid: d66b000165b0c1c4cbbf337f142bdb32, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889777586666416696, guid: d66b000165b0c1c4cbbf337f142bdb32, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -3.9997559
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889777586666416696, guid: d66b000165b0c1c4cbbf337f142bdb32, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 14.000122
+      objectReference: {fileID: 0}
     - target: {fileID: 6038443464318629711, guid: d66b000165b0c1c4cbbf337f142bdb32, type: 3}
       propertyPath: sounds.Array.data[16].loop
       value: 1
