@@ -3663,6 +3663,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3737777878742932671, guid: 9efd844f17a77f24fb7efade4863b116, type: 3}
+      propertyPath: _nameNextScene
+      value: Level 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3790943238353757073, guid: 9efd844f17a77f24fb7efade4863b116, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3698,6 +3702,14 @@ PrefabInstance:
     - target: {fileID: 7348932762939601315, guid: 9efd844f17a77f24fb7efade4863b116, type: 3}
       propertyPath: groundLayer.m_Bits
       value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420524599269988589, guid: 9efd844f17a77f24fb7efade4863b116, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.069
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420524599269988589, guid: 9efd844f17a77f24fb7efade4863b116, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.092
       objectReference: {fileID: 0}
     - target: {fileID: 7926278083490615076, guid: 9efd844f17a77f24fb7efade4863b116, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3741,7 +3753,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9041176970888227264, guid: 9efd844f17a77f24fb7efade4863b116, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
