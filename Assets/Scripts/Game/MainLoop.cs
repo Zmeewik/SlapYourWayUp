@@ -7,7 +7,7 @@ public class MainLoop : MonoBehaviour
 {
     [Header("Level")]
     [SerializeField] List<Level> Levels;
-    int currentLevel = 0;
+    int currentLevel = -1;
     [Serializable]
     struct Level
     {
@@ -22,6 +22,7 @@ public class MainLoop : MonoBehaviour
     [SerializeField] private ScoreSlider _scoreView;
     [SerializeField] private float _currentScore;
     [SerializeField] private FinalScene _finalStr;
+    [SerializeField] private Timer _timer;
 
     private float _currentTime = 0;
 
@@ -29,6 +30,7 @@ public class MainLoop : MonoBehaviour
 
     void Start()
     {
+        SetLevel();
         var num = (int)(UnityEngine.Random.value * 3) + 1;
         PlayerPrefs.SetInt("Sound", 0);
         PlayerPrefs.SetInt("Music", 0);
@@ -47,6 +49,14 @@ public class MainLoop : MonoBehaviour
             IsFinalGame = true;
             Final();
         }
+
+        _timer.SetCurrentTime(_currentTime);
+    }
+
+    public void SetLevel()
+    {
+        currentLevel++;
+        _timer.SetMaxTime(Levels[currentLevel]._maxTime);
     }
 
     public void ScoreAdd(float value)
