@@ -34,6 +34,7 @@ public class baseNPC : MonoBehaviour
             {
                 _currentWorkPlace = workPlace;
                 anim.Play("CharacterArmature|Punch");
+
             }
         }
     }
