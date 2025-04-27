@@ -18,8 +18,10 @@ public class Punch : MonoBehaviour
     [SerializeField] private float punchDistance;
     [SerializeField] Image fillImage;
     [SerializeField] CoffeeThrow coffeScr;
+    [SerializeField] Animator anim;
     float currentForce = 0;
     float currentProgress = 0;
+    bool startedCharge = false;
 
 
 
@@ -38,6 +40,13 @@ public class Punch : MonoBehaviour
     //Punch force build up
     private void BuildUpPunchForce(float time)
     {
+
+        if(!startedCharge)
+        {
+            anim.Play("Up");
+            Invoke("ChargeAnim", 0.5f);
+        }
+
         //Handle time
         if(time > chargeTimeMax)
             time = chargeTimeMax;
@@ -50,6 +59,11 @@ public class Punch : MonoBehaviour
         //Add progress
         currentProgress = Math.Clamp(time, 0, 1);
         UpdateForceBar();
+    }
+
+    private void ChargeAnim()
+    {
+        anim.Play("Charge");
     }
 
     //Punch something
@@ -75,11 +89,13 @@ public class Punch : MonoBehaviour
                 {
                     Particles.instance.PlayUIParticle("slap");
                     SoundManager.instance.Play("Slap");
+                    anim.Play("Slap");
                 }
                 else
                 {
                     Particles.instance.PlayUIParticle("strongSlap");
                     SoundManager.instance.Play("StrongSlap");
+                    anim.Play("Slap");
                 }
             }
             
@@ -116,5 +132,10 @@ public class Punch : MonoBehaviour
     private void UpdateForceBar()
     {
         forceBar.value = currentProgress;
+    }
+
+        private void ChargeAnimIdle()
+    {
+        anim.Play("Idle");
     }
 }

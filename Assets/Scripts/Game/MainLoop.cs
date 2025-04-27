@@ -6,16 +6,14 @@ using UnityEngine;
 public class MainLoop : MonoBehaviour
 {
     [Header("Level")]
-    [SerializeField] List<Level> Levels;
     int currentLevel = -1;
-    [Serializable]
-    struct Level
-    {
-        public float _maxScore;
-        public float _maxTime;
-        public GameObject level;
-        public List<int> stars;
-    }
+    [SerializeField] string startText;
+    public float _maxScore;
+    public float _maxTime;
+    public GameObject level;
+    public List<int> stars;
+
+    bool started = false;
 
 
     [Header("System")]
@@ -41,10 +39,13 @@ public class MainLoop : MonoBehaviour
 
     void Update()
     {
-        _scoreView.ViewScore(_currentScore, Levels[currentLevel].stars[2]);
+        if(!started)
+            return;
+
+        _scoreView.ViewScore(_currentScore, stars[2]);
         _currentTime += Time.deltaTime;
 
-        if (_currentTime >= Levels[currentLevel]._maxTime && !IsFinalGame)
+        if (_currentTime >= _maxTime && !IsFinalGame)
         {
             IsFinalGame = true;
             Final();
@@ -56,12 +57,13 @@ public class MainLoop : MonoBehaviour
     public void SetLevel()
     {
         currentLevel++;
-        _timer.SetMaxTime(Levels[currentLevel]._maxTime);
+        _timer.SetMaxTime(_maxTime);
     }
 
     public void ScoreAdd(float value)
     {
-        _currentScore += value;
+        if(started)
+            _currentScore += value;
     }
 
     public float GetScore()
@@ -75,8 +77,8 @@ public class MainLoop : MonoBehaviour
 
         int result = 0;
 
-        for(int i = 0; i < Levels[currentLevel].stars.Count; i++)
-            if (_currentScore >= Levels[currentLevel].stars[i])
+        for(int i = 0; i < stars.Count; i++)
+            if (_currentScore >= stars[i])
                 result++;
 
         _finalStr.ViewStar(result);
