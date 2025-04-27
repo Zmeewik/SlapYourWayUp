@@ -41,7 +41,7 @@ public class MainLoop : MonoBehaviour
 
     void Update()
     {
-        _scoreView.ViewScore(_currentScore, Levels[currentLevel]._maxScore);
+        _scoreView.ViewScore(_currentScore, Levels[currentLevel].stars[2]);
         _currentTime += Time.deltaTime;
 
         if (_currentTime >= Levels[currentLevel]._maxTime && !IsFinalGame)
