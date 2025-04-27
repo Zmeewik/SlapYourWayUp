@@ -13,6 +13,7 @@ public class InputSctipt : MonoBehaviour
     private IMovable player;
     private IRotatable cameraObject;
     [SerializeField] private Punch punchScr;
+    [SerializeField] private CoffeeThrow coffeeThrow;
 
 
     void Start()
@@ -78,6 +79,13 @@ public class InputSctipt : MonoBehaviour
                 if(punchScr != null)
                     punchScr.PunchHandle(chargeTimer, true);
             }
+        }
+
+
+        //Handle coffe throw
+        if(Input.GetMouseButton(1))
+        {
+            coffeeThrow.ThrowCoffee();
         }
 
 

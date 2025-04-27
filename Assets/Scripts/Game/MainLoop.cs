@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,24 +6,41 @@ using UnityEngine;
 public class MainLoop : MonoBehaviour
 {
     [Header("Level")]
-    [SerializeField] private float _maxScore;
-    [SerializeField] private float _maxTime;
+    [SerializeField] List<Level> Levels;
+    int currentLevel = 0;
+    [Serializable]
+    struct Level
+    {
+        public float _maxScore;
+        public float _maxTime;
+        public GameObject level;
+    }
+
 
     [Header("System")]
     [SerializeField] private ScoreSlider _scoreView;
-
     [SerializeField] private float _currentScore;
 
     private float _currentTime = 0;
 
     public bool IsFinalGame { get; private set; }
 
+    void Start()
+    {
+        var num = (int)(UnityEngine.Random.value * 3) + 1;
+        PlayerPrefs.SetInt("Sound", 0);
+        PlayerPrefs.SetInt("Music", 0);
+        PlayerPrefs.Save();
+        SoundManager.instance.Play("Music"+num);
+        SoundManager.instance.Play("OfficeAmbient");
+    }
+
     void Update()
     {
-        _scoreView.ViewScore(_currentScore, _maxScore);
+        _scoreView.ViewScore(_currentScore, Levels[currentLevel]._maxScore);
         _currentTime += Time.deltaTime;
 
-        if (_currentTime >= _maxTime)
+        if (_currentTime >= Levels[currentLevel]._maxTime)
             IsFinalGame = true;
     }
 
