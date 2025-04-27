@@ -44,6 +44,7 @@ public class MotivationBar : MonoBehaviour, IInteractable
         }
         if(motivation >= maxMotivation)
         {
+            Particles.instance.PlayParticles(transform.position, "inspiraton");
             motivation = maxMotivation;
             currenTime = timeNoChange;
         }
@@ -97,6 +98,8 @@ public class MotivationBar : MonoBehaviour, IInteractable
     {
         if(collision.gameObject.tag == "Coffee")
         {
+            Particles.instance.PlayParticles(collision.transform.position, "coffee");
+            SoundManager.instance.Play("Coffee");
             motivation = maxMotivation;
             currenTime = timeNoChange;
             Destroy(collision.gameObject);
