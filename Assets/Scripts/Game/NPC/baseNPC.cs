@@ -6,6 +6,7 @@ public class baseNPC : MonoBehaviour
     [SerializeField] private float _timeUpdateScore;
     [SerializeField] private MainLoop _mainLoop;
     [SerializeField] private SerchObject _serchObject;
+    [SerializeField] private float _timeTeleport = 5f;
 
     private WorkPlace _currentWorkPlace = null;
     private float _time = 0;
@@ -72,6 +73,16 @@ public class baseNPC : MonoBehaviour
                 } 
             }
         }
+
+        if (_movement.IsMove)
+        {
+            _timeTeleport -= Time.deltaTime;
+            
+            if(_timeTeleport <= 0)
+                transform.position = _movement.GetTarget;
+        }
+
+
     }
 
     private void FixedUpdate()

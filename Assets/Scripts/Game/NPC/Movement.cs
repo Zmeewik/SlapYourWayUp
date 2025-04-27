@@ -14,6 +14,7 @@ public class Movement : MonoBehaviour
     
     public bool IsEndTarget { get; private set; }
     public bool IsMove => _isMove;
+    public Vector3 GetTarget => _currentTarget;
 
     private void Start()
     {
