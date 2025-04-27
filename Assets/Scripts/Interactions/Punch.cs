@@ -72,9 +72,15 @@ public class Punch : MonoBehaviour
                 rb.AddForce(forceDirection * (minPushForce + (maxPushForce - minPushForce) * force), ForceMode.Impulse); // сила толчка 5f
                 //Hit sound
                 if(force < 0.5)
+                {
+                    Particles.instance.PlayUIParticle("slap");
                     SoundManager.instance.Play("Slap");
+                }
                 else
+                {
+                    Particles.instance.PlayUIParticle("strongSlap");
                     SoundManager.instance.Play("StrongSlap");
+                }
             }
             
             //Activate
@@ -90,6 +96,18 @@ public class Punch : MonoBehaviour
                 {
                     print(hit.collider.tag);
                     coffeScr.AddLoad();
+                }
+
+                //Hit sound
+                if(force < 0.5)
+                {
+                    Particles.instance.PlayUIParticle("slap");
+                    SoundManager.instance.Play("Slap");
+                }
+                else
+                {
+                    Particles.instance.PlayUIParticle("strongSlap");
+                    SoundManager.instance.Play("StrongSlap");
                 }
             }
         }
