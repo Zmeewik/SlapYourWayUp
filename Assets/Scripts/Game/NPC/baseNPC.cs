@@ -58,10 +58,10 @@ public class baseNPC : MonoBehaviour
     {
         if(!stunned)
         {
-            transform.position = _currentWorkPlace.WorkPoint.position;
-
             if (IsWork)
             {
+                transform.position = _currentWorkPlace.WorkPoint.position;
+
                 if (_time >= _timeUpdateScore)
                 {
                     _mainLoop.ScoreAdd(_currentWorkPlace.ScoreAddPlace * _motivation.CurrentMotivation);
