@@ -60,6 +60,8 @@ public class baseNPC : MonoBehaviour
         {
             if (IsWork)
             {
+                transform.position = _currentWorkPlace.WorkPoint.position;
+
                 if (_time >= _timeUpdateScore)
                 {
                     _mainLoop.ScoreAdd(_currentWorkPlace.ScoreAddPlace * _motivation.CurrentMotivation);
@@ -93,8 +95,6 @@ public class baseNPC : MonoBehaviour
             if(_timeTeleport <= 0)
                 transform.position = _movement.GetTarget;
         }
-
-
     }
 
     private void FixedUpdate()

@@ -8,17 +8,20 @@ public class WorkPlace : MonoBehaviour
 
     private bool _isBusy = false;
     private baseNPC _currentWorker;
+    private Transform _point;
 
     public bool IsLifeObject { get; private set; }
     public float ScoreAddPlace => _scoreAdd;
     public bool IsBusy => _isBusy;
     public baseNPC CurrentWorker => _currentWorker;
+    public Transform WorkPoint => _point;
 
     private float _time = 0;
 
     private void Start()
     {
         IsLifeObject = true;
+        _point = transform.GetChild(0);
     }
 
     private void Update()
