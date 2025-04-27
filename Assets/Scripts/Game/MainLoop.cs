@@ -35,14 +35,16 @@ public class MainLoop : MonoBehaviour
     {
         SetLevel();
         Cursor.visible = false;
+        Screen.lockCursor = true;
         var num = (int)(UnityEngine.Random.value * 3) + 1;
         PlayerPrefs.SetInt("Sound", 0);
         PlayerPrefs.SetInt("Music", 0);
         PlayerPrefs.Save();
-        SoundManager.instance.Play("Music"+num);
+        SoundManager.instance.Play("Music"+ num);
         SoundManager.instance.Play("OfficeAmbient");
         text.text = startText[0];
         strNum = 1;
+        _currentTime = _maxTime;
     }
 
     
@@ -69,9 +71,9 @@ public class MainLoop : MonoBehaviour
             return;
 
         _scoreView.ViewScore(_currentScore, stars[2]);
-        _currentTime += Time.deltaTime;
+        _currentTime -= Time.deltaTime;
 
-        if (_currentTime >= _maxTime && !IsFinalGame)
+        if (_currentTime <= 0 && !IsFinalGame)
         {
             IsFinalGame = true;
             Final();
@@ -83,13 +85,14 @@ public class MainLoop : MonoBehaviour
     public void SetLevel()
     {
         currentLevel++;
-        _timer.SetMaxTime(_maxTime);
     }
 
     public void ScoreAdd(float value)
     {
-        if(started)
+        if(started && !IsFinalGame)
             _currentScore += value;
+
+        print(_currentScore);
     }
 
     public float GetScore()
@@ -102,6 +105,7 @@ public class MainLoop : MonoBehaviour
         _finalStr.gameObject.SetActive(true);
         input.DisableRotation();
         Cursor.visible = true;
+        Screen.lockCursor = false;
 
         int result = 0;
 
@@ -109,6 +113,6 @@ public class MainLoop : MonoBehaviour
             if (_currentScore >= stars[i])
                 result++;
 
-        _finalStr.ViewStar(result);
+        _finalStr.ViewStar(result, _currentScore);
     }
 }

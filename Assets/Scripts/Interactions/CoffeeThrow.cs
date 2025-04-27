@@ -27,6 +27,7 @@ public class CoffeeThrow : MonoBehaviour
     {
         if(currentLoads >= maxLoads)
         {
+            
             currentLoads = 0;
             var obj = Instantiate(coffee, cam.transform.position + cam.transform.forward * 2f, Quaternion.identity);
             var rb = obj.GetComponent<Rigidbody>();

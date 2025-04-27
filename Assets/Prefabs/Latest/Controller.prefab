@@ -1,0 +1,378 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &665610365059945610
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8339600975871969622}
+  - component: {fileID: 272055096874437501}
+  - component: {fileID: 3069063489563769830}
+  - component: {fileID: 8044127060592317115}
+  - component: {fileID: 6356578743155867899}
+  - component: {fileID: 2311689204435610630}
+  - component: {fileID: 967876449191024479}
+  m_Layer: 0
+  m_Name: Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8339600975871969622
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665610365059945610}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 18.290318, z: 0}
+  m_LocalScale: {x: 1.5683568, y: 5.946602, z: 1.5683568}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3523167638344277290}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &272055096874437501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665610365059945610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36bc08b8460aa1a4dae904251d657329, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundAngle: 90
+  slopeAngle: 0
+  wallAngle: 0
+  groundAngleCrouch: 0
+--- !u!114 &3069063489563769830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665610365059945610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0d8357f65b58ef4bb5e4527e69e1580, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movableObject: {fileID: 0}
+  rotatableObject: {fileID: 0}
+  punchScr: {fileID: 0}
+  coffeeThrow: {fileID: 0}
+  mainLoop: {fileID: 2311689204435610630}
+--- !u!114 &8044127060592317115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665610365059945610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2072b9b2406eb8e4293324388fb95d69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 0}
+--- !u!114 &6356578743155867899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665610365059945610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cabf386dfa5d65343bfb2eea5b4f4410, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Achivement
+    audioclip: {fileID: 8300000, guid: 708cc07f8c935484da99ab66baa3b414, type: 3}
+    volume: 0.1
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 24300002, guid: 16541326401f85c49b1e09308a83188c, type: 2}
+  - name: Achivement2
+    audioclip: {fileID: 8300000, guid: b670f4188fea2cb44ae0928ff4df1c5c, type: 3}
+    volume: 0.1
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 24300002, guid: 16541326401f85c49b1e09308a83188c, type: 2}
+  - name: Achivement2
+    audioclip: {fileID: 8300000, guid: ec330b12a05b17c4ab0b7fbd69ed417e, type: 3}
+    volume: 0.1
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 24300002, guid: 16541326401f85c49b1e09308a83188c, type: 2}
+  - name: Music1
+    audioclip: {fileID: 8300000, guid: 9ce99c49da293f244b3cf681d569d289, type: 3}
+    volume: 0.05
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 1
+    OutputAudioMixerGroup: {fileID: 24300002, guid: 16541326401f85c49b1e09308a83188c, type: 2}
+  - name: Music2
+    audioclip: {fileID: 8300000, guid: fbee2a3ce95ad924b8a17ae56505aef7, type: 3}
+    volume: 0.05
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 1
+    OutputAudioMixerGroup: {fileID: 24300002, guid: 16541326401f85c49b1e09308a83188c, type: 2}
+  - name: Music3
+    audioclip: {fileID: 8300000, guid: 9b715fddd1e057f4f9a28ad536cee665, type: 3}
+    volume: 0.05
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 1
+    OutputAudioMixerGroup: {fileID: 24300002, guid: 16541326401f85c49b1e09308a83188c, type: 2}
+  - name: GameOver
+    audioclip: {fileID: 8300000, guid: aef63eb19d6f46a43b37fa6d0f00a3ca, type: 3}
+    volume: 0.1
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 24300002, guid: 16541326401f85c49b1e09308a83188c, type: 2}
+  - name: Fan
+    audioclip: {fileID: 8300000, guid: 3e2f101fc62d3134693a8c0718be6c5d, type: 3}
+    volume: 0.1
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 24300002, guid: 16541326401f85c49b1e09308a83188c, type: 2}
+  - name: Keyboard
+    audioclip: {fileID: 8300000, guid: 75907303d10962343a5213154a03fbea, type: 3}
+    volume: 0.1
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 24300002, guid: 16541326401f85c49b1e09308a83188c, type: 2}
+  - name: Phone
+    audioclip: {fileID: 8300000, guid: d71ab1f6d17ba34498983884c1de7c05, type: 3}
+    volume: 0.1
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 24300002, guid: 16541326401f85c49b1e09308a83188c, type: 2}
+  - name: CoffeMashine
+    audioclip: {fileID: 8300000, guid: ea21b3bfb47c79a40b830e8a5dab2cbd, type: 3}
+    volume: 0.1
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 24300002, guid: 16541326401f85c49b1e09308a83188c, type: 2}
+  - name: OfficeAmbient
+    audioclip: {fileID: 8300000, guid: d060129b40604ad408dff439614e5258, type: 3}
+    volume: 0.1
+    audiosource: {fileID: 0}
+    loop: 1
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 24300002, guid: 16541326401f85c49b1e09308a83188c, type: 2}
+  - name: Elevator
+    audioclip: {fileID: 8300000, guid: 70b88660777ee1648aea95ca7580333f, type: 3}
+    volume: 0.1
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 24300002, guid: 16541326401f85c49b1e09308a83188c, type: 2}
+  - name: Slap
+    audioclip: {fileID: 8300000, guid: ed0c2881c0fb1fe4381bff1c2e44c140, type: 3}
+    volume: 0.1
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 24300002, guid: 16541326401f85c49b1e09308a83188c, type: 2}
+  - name: Paper
+    audioclip: {fileID: 8300000, guid: 1dd9f07995ed1b64f8dd592601bf3261, type: 3}
+    volume: 0.1
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 24300002, guid: 16541326401f85c49b1e09308a83188c, type: 2}
+  - name: 
+    audioclip: {fileID: 0}
+    volume: 0
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 24300002, guid: 16541326401f85c49b1e09308a83188c, type: 2}
+  - name: Steps
+    audioclip: {fileID: 8300000, guid: 86feaab9cd60ed8459f4050f961f754b, type: 3}
+    volume: 0.456
+    audiosource: {fileID: 0}
+    loop: 1
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 24300002, guid: 16541326401f85c49b1e09308a83188c, type: 2}
+  - name: StrongSlap
+    audioclip: {fileID: 8300000, guid: 34e82424e58ca4743ba36500705bd4d5, type: 3}
+    volume: 0.1
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 24300002, guid: 16541326401f85c49b1e09308a83188c, type: 2}
+  - name: OfficeAmbient2
+    audioclip: {fileID: 8300000, guid: 33fb2d24712e59441a60817c25d57699, type: 3}
+    volume: 0.1
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 24300002, guid: 16541326401f85c49b1e09308a83188c, type: 2}
+  - name: Broken
+    audioclip: {fileID: 8300000, guid: d2feb8b79a53a5d41b9ca6274062dd41, type: 3}
+    volume: 0.1
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 24300002, guid: 16541326401f85c49b1e09308a83188c, type: 2}
+  - name: Error
+    audioclip: {fileID: 8300000, guid: 869fe1ce908f09e4cbe49aa4aee2d65b, type: 3}
+    volume: 0.1
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 24300002, guid: 16541326401f85c49b1e09308a83188c, type: 2}
+  - name: Jump
+    audioclip: {fileID: 8300000, guid: 883fa62fe9e19de4cadf45ae118aa16f, type: 3}
+    volume: 0.8
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 24300002, guid: 16541326401f85c49b1e09308a83188c, type: 2}
+  - name: Land
+    audioclip: {fileID: 8300000, guid: a44c5464ef989ae48974769420914a0a, type: 3}
+    volume: 0.8
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 24300002, guid: 16541326401f85c49b1e09308a83188c, type: 2}
+  - name: Coffee
+    audioclip: {fileID: 8300000, guid: acea07597e5df8f4892511164bd4d279, type: 3}
+    volume: 0.2
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 0}
+  - name: 
+    audioclip: {fileID: 0}
+    volume: 0
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 0}
+  - name: 
+    audioclip: {fileID: 0}
+    volume: 0
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 0}
+  - name: 
+    audioclip: {fileID: 0}
+    volume: 0
+    audiosource: {fileID: 0}
+    loop: 0
+    isMusic: 0
+    OutputAudioMixerGroup: {fileID: 0}
+--- !u!114 &2311689204435610630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665610365059945610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e13694e54676cb45836fd4f2374186e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startText:
+  - "-\u042D\u0439, \u043D\u043E\u0432\u0438\u0447\u043E\u043A! \u042D\u0442\u043E
+    \u0442\u0432\u043E\u044F \u0442\u0440\u0430\u0432\u043C\u043E-\u2026 \u044D\u043C,\u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043E\u0447\u043D\u0430\u044F
+    \u043F\u043B\u043E\u0449\u0430\u0434\u043A\u0430! \u041D\u0430\u0436\u043C\u0438
+    \u041B\u041A\u041C \u043F\u043E \u043D\u0435\u0441\u0447\u0430\u0441\u0442\u043D\u043E\u043C\u0443
+    \u043E\u0444\u0438\u0441\u043D\u043E\u043C\u0443 \u043F\u043B\u0430\u043D\u043A\u0442\u043E\u043D\u0443
+    \u2014 \u044D\u0442\u043E \u201C\u0428\u043B\u0435\u043F\u043E\u043A\u201D. \u041A\u0430\u0436\u0434\u044B\u0439
+    \u0448\u043B\u0435\u043F\u043E\u043A \u0437\u0430\u043F\u043E\u043B\u043D\u044F\u0435\u0442
+    \u0448\u043A\u0430\u043B\u0443 \u043C\u043E\u0442\u0438\u0432\u0430\u0446\u0438\u0438."
+  - "-\u041F\u043E\u043B\u043D\u044B\u0439 \u0437\u0430\u0440\u044F\u0434 = \u0440\u0430\u0431\u043E\u0442\u043D\u0438\u043A
+    \u043E\u0436\u0438\u0432\u0430\u0435\u0442 \u0438 \u043C\u0447\u0438\u0442\u0441\u044F
+    \u043A \u0441\u0432\u043E\u0435\u043C\u0443 \u0441\u0442\u043E\u043B\u0443, \u0431\u0443\u0434\u0442\u043E
+    \u0435\u0433\u043E \u0442\u0430\u043C \u0436\u0434\u0451\u0442 \u043E\u043F\u043B\u0430\u0442\u0430
+    \u0442\u0440\u0443\u0434\u0430!"
+  - "-\u0426\u0435\u043B\u044C: \u0437\u0430 10 \u0441\u0435\u043A\u0443\u043D\u0434
+    \u0443\u0441\u0442\u0440\u043E\u0438\u0442\u044C \u0444\u0435\u0435\u0440\u0438\u044E
+    \u0449\u0451\u043B\u043A\u043E\u0432 \u0438 \u043D\u0430\u0431\u0440\u0430\u0442\u044C
+    \u0445\u043E\u0442\u044C \u043F\u0430\u0440\u043E\u0447\u043A\u0443 \u0437\u0432\u0435\u0437\u0434\u043E\u0447\u0435\u043A!"
+  _maxScore: 7
+  _maxTime: 10
+  level: {fileID: 0}
+  stars: 030000000500000007000000
+  _scoreView: {fileID: 0}
+  _currentScore: 0
+  _finalStr: {fileID: 0}
+  _timer: {fileID: 0}
+  TextObject: {fileID: 0}
+  text: {fileID: 0}
+  input: {fileID: 3069063489563769830}
+--- !u!114 &967876449191024479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665610365059945610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7bb3c08203ed15448b8e31e8620bd7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particles:
+  - {fileID: 8723300567668633487, guid: a48d09c278fed96408707a5588f0ae60, type: 3}
+  - {fileID: 8375350848874968156, guid: 1ac1f477918094d48b1d71b9daec5b3c, type: 3}
+  - {fileID: 6086043855796204876, guid: 254f1bdb752272d4ca62f57e218709ee, type: 3}
+  - {fileID: 4823249374416938281, guid: ee1d71d8740c31b4eb594c82391ce243, type: 3}
+  uiPoint: {fileID: 0}
+--- !u!1 &7924256158529421441
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3523167638344277290}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3523167638344277290
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7924256158529421441}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8339600975871969622}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

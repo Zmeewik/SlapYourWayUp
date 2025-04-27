@@ -744,7 +744,7 @@ GameObject:
   - component: {fileID: 4408851998362430107}
   m_Layer: 3
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Motivation
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -896,7 +896,7 @@ MonoBehaviour:
   maxMotivationAdd: 1
   npc: {fileID: 6934605654148551828}
   timeNoChange: 2
-  decreaseSpeed: 0.001
+  decreaseSpeed: 0.005
   phraseChance: 0.5
   text: {fileID: 8984104998313652711}
   textObject: {fileID: 5151007809513045931}
