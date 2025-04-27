@@ -14,7 +14,8 @@ public class InputSctipt : MonoBehaviour
     private IRotatable cameraObject;
     [SerializeField] private Punch punchScr;
     [SerializeField] private CoffeeThrow coffeeThrow;
-
+    [SerializeField] private MainLoop mainLoop;
+    bool disableRotation = false;
 
     void Start()
     {
@@ -29,12 +30,20 @@ public class InputSctipt : MonoBehaviour
             cameraObject = scrRot;
     }
 
+    public void DisableRotation()
+    {
+        disableRotation = true;
+    }
+
     // Update is called once per frame
     void Update()
     {
         
         //Handle movement
         //Camera movement
+        if(disableRotation)
+            return;
+
         float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");
         if(cameraObject != null)
@@ -55,6 +64,12 @@ public class InputSctipt : MonoBehaviour
 
         //Handle hit
         //Retention of mouse click
+        if(Input.GetMouseButtonDown(0))
+        {
+            mainLoop.SkipText();
+        }
+
+
         //Start LMC
         if (Input.GetMouseButton(0))
         {

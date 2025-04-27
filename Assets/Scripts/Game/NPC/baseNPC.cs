@@ -91,7 +91,6 @@ public class baseNPC : MonoBehaviour
         if (_movement.IsMove)
         {
             _timeTeleport -= Time.deltaTime;
-            
             if(_timeTeleport <= 0)
                 transform.position = _movement.GetTarget;
         }

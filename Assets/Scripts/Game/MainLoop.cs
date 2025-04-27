@@ -1,13 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class MainLoop : MonoBehaviour
 {
     [Header("Level")]
     int currentLevel = -1;
-    [SerializeField] string startText;
+    [SerializeField] List<string> startText;
+    int strNum = 0;
     public float _maxScore;
     public float _maxTime;
     public GameObject level;
@@ -21,6 +23,9 @@ public class MainLoop : MonoBehaviour
     [SerializeField] private float _currentScore;
     [SerializeField] private FinalScene _finalStr;
     [SerializeField] private Timer _timer;
+    [SerializeField] GameObject TextObject;
+    [SerializeField] TextMeshProUGUI text;
+    [SerializeField] InputSctipt input;
 
     private float _currentTime = 0;
 
@@ -29,12 +34,33 @@ public class MainLoop : MonoBehaviour
     void Start()
     {
         SetLevel();
+        Cursor.visible = false;
         var num = (int)(UnityEngine.Random.value * 3) + 1;
         PlayerPrefs.SetInt("Sound", 0);
         PlayerPrefs.SetInt("Music", 0);
         PlayerPrefs.Save();
         SoundManager.instance.Play("Music"+num);
         SoundManager.instance.Play("OfficeAmbient");
+        text.text = startText[0];
+        strNum = 1;
+    }
+
+    
+    public void SkipText()
+    {
+        if(!started)
+        {
+            if(strNum > startText.Count - 1)
+            {
+                TextObject.SetActive(false);
+                started = true;
+            }
+            else
+            {
+                text.text = startText[strNum];
+                strNum++;
+            }
+        }
     }
 
     void Update()
@@ -74,6 +100,8 @@ public class MainLoop : MonoBehaviour
     public void Final()
     {
         _finalStr.gameObject.SetActive(true);
+        input.DisableRotation();
+        Cursor.visible = true;
 
         int result = 0;
 
