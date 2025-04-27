@@ -72,7 +72,9 @@ public class Punch : MonoBehaviour
                 rb.AddForce(forceDirection * (minPushForce + (maxPushForce - minPushForce) * force), ForceMode.Impulse); // сила толчка 5f
                 //Hit sound
                 if(force < 0.5)
-                    SoundManager.instance.Play("");
+                    SoundManager.instance.Play("Slap");
+                else
+                    SoundManager.instance.Play("StrongSlap");
             }
             
             //Activate
