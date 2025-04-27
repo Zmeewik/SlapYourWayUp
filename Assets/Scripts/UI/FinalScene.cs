@@ -24,4 +24,9 @@ public class FinalScene : MonoBehaviour
         else
             _text.text = _winText;
     }
+
+    public void NextLevel()
+    {
+        
+    }
 }

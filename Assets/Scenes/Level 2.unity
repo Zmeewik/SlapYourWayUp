@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -527,6 +527,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 166722728}
   m_Mesh: {fileID: 9199452160724314299, guid: bcd618cf97f1bf64785d83ac9be686bb, type: 3}
+--- !u!114 &168450854 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6174174045737045157, guid: 9efd844f17a77f24fb7efade4863b116, type: 3}
+  m_PrefabInstance: {fileID: 5931250339767130667}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b72aeedd8f879cc4bb979ee86fd22e80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &170716045
 GameObject:
   m_ObjectHideFlags: 0
@@ -5027,6 +5038,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6075611860939590657, guid: 9efd844f17a77f24fb7efade4863b116, type: 3}
+      propertyPath: m_FillAmount
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 6150763324383640570, guid: 9efd844f17a77f24fb7efade4863b116, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -5042,6 +5057,14 @@ PrefabInstance:
     - target: {fileID: 7926278083490615076, guid: 9efd844f17a77f24fb7efade4863b116, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8016686939833804717, guid: 9efd844f17a77f24fb7efade4863b116, type: 3}
+      propertyPath: _scoreView
+      value: 
+      objectReference: {fileID: 168450854}
+    - target: {fileID: 8016686939833804717, guid: 9efd844f17a77f24fb7efade4863b116, type: 3}
+      propertyPath: Levels.Array.data[0]._maxScore
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 8335976225177014886, guid: 9efd844f17a77f24fb7efade4863b116, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5064,7 +5087,8 @@ PrefabInstance:
       value: Level1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6823836316532093654, guid: 9efd844f17a77f24fb7efade4863b116, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4465799862346977289, guid: 9efd844f17a77f24fb7efade4863b116, type: 3}
       insertIndex: -1
