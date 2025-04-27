@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FinalScene : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class FinalScene : MonoBehaviour
     [SerializeField] private TMP_Text _result;
     [SerializeField] private string _winText = "MOLODEC!";
     [SerializeField] private string _loseText = "NE_MOLODEC!";
+    [SerializeField] private string _nameNextScene;
 
     public void ViewStar(int value)
     {
@@ -27,6 +29,6 @@ public class FinalScene : MonoBehaviour
 
     public void NextLevel()
     {
-        
+        SceneManager.LoadScene(_nameNextScene);
     }
 }
