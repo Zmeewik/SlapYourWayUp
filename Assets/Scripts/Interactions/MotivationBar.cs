@@ -16,6 +16,7 @@ public class MotivationBar : MonoBehaviour, IInteractable
     [SerializeField] Slider motivationBar;
     [SerializeField] float minMotivationAdd;
     [SerializeField] float maxMotivationAdd;
+    [SerializeField] baseNPC npc;
     [Header("Decrease")]
     [SerializeField] float timeNoChange;
     float currenTime = 0;
@@ -27,6 +28,8 @@ public class MotivationBar : MonoBehaviour, IInteractable
     [SerializeField] GameObject textObject;
     [SerializeField] List<string> phrases;
     [SerializeField] float phraseTime;
+
+
     float currentPhraseTime = 0;
 
     public float CurrentMotivation => motivation;
@@ -48,6 +51,11 @@ public class MotivationBar : MonoBehaviour, IInteractable
             motivation = maxMotivation;
             currenTime = timeNoChange;
         }
+
+        if(force > 0.5f)
+        {   
+            npc.Stun();
+        }   
     }
 
     void Update()
