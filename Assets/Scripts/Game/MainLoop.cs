@@ -14,12 +14,14 @@ public class MainLoop : MonoBehaviour
         public float _maxScore;
         public float _maxTime;
         public GameObject level;
+        public List<int> stars;
     }
 
 
     [Header("System")]
     [SerializeField] private ScoreSlider _scoreView;
     [SerializeField] private float _currentScore;
+    [SerializeField] private FinalScene _finalStr;
 
     private float _currentTime = 0;
 
@@ -40,8 +42,11 @@ public class MainLoop : MonoBehaviour
         _scoreView.ViewScore(_currentScore, Levels[currentLevel]._maxScore);
         _currentTime += Time.deltaTime;
 
-        if (_currentTime >= Levels[currentLevel]._maxTime)
+        if (_currentTime >= Levels[currentLevel]._maxTime && !IsFinalGame)
+        {
             IsFinalGame = true;
+            Final();
+        }
     }
 
     public void ScoreAdd(float value)
@@ -52,5 +57,18 @@ public class MainLoop : MonoBehaviour
     public float GetScore()
     {
         return _currentScore;
+    }
+
+    public void Final()
+    {
+        _finalStr.gameObject.SetActive(true);
+
+        int result = 0;
+
+        for(int i = 0; i < Levels[currentLevel].stars.Count; i++)
+            if (_currentScore >= Levels[currentLevel].stars[i])
+                result++;
+
+        _finalStr.ViewStar(result);
     }
 }

@@ -38,7 +38,7 @@ public class baseNPC : MonoBehaviour
             _currentWorkPlace = null;
         }
     }
-
+    
     private void Start()
     {
         _movement = GetComponent<Movement>();

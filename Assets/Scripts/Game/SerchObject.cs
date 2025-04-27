@@ -4,7 +4,7 @@ using UnityEngine;
 public class SerchObject : MonoBehaviour
 {
     [SerializeField] private List<WorkPlace> _workPlaces;
-
+    
     private void Start()
     {
         Transform[] children = GetComponentsInChildren<Transform>();
