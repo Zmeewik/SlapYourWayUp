@@ -44,4 +44,19 @@ public class Movement : MonoBehaviour
             }
         }
     }
+
+    public void RotateToTarget()
+    {
+        if (_currentTarget == null)
+            return;
+
+        Vector3 direction = (_currentTarget - transform.position).normalized;
+        direction.y = 0; // Чтобы поворачивался только по горизонтали
+
+        if (direction.magnitude > 0.01f) // Проверка, чтобы не дёргался при очень маленьких значениях
+        {
+            Quaternion lookRotation = Quaternion.LookRotation(direction);
+            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f); // 5f — скорость поворота
+        }
+    }
 }

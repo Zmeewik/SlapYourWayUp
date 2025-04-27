@@ -7,6 +7,11 @@ public class baseNPC : MonoBehaviour
     [SerializeField] private MainLoop _mainLoop;
     [SerializeField] private SerchObject _serchObject;
     [SerializeField] private float _timeTeleport = 5f;
+    [SerializeField] private float timeInactive;
+    [SerializeField] private Animator anim;
+    private float curTime;
+    bool stunned = false;
+    bool going = false;
 
     private WorkPlace _currentWorkPlace = null;
     private float _time = 0;
@@ -27,7 +32,10 @@ public class baseNPC : MonoBehaviour
         if (other.TryGetComponent(out WorkPlace workPlace) && _currentWorkPlace == null)
         {
             if(workPlace.CurrentWorker == this)
+            {
                 _currentWorkPlace = workPlace;
+                anim.Play("CharacterArmature|Punch");
+            }
         }
     }
 
@@ -48,29 +56,33 @@ public class baseNPC : MonoBehaviour
 
     private void Update()
     {
-        if (IsWork)
+        if(!stunned)
         {
-            if (_time >= _timeUpdateScore)
+            if (IsWork)
             {
-                _mainLoop.ScoreAdd(_currentWorkPlace.ScoreAddPlace * _motivation.CurrentMotivation);
-                _time = 0;
-            }
-            else
-            {
-                _time += Time.deltaTime;
-            }
-        }
-        else if(!IsWork)
-        {
-            if(_currentWorkPlace == null && !_movement.IsMove)
-            {
-                WorkPlace newPlace = _serchObject.SearchWorkPlace(transform.position);
-
-                if(newPlace != null)
+                if (_time >= _timeUpdateScore)
                 {
-                    newPlace.SetWorker(this);
-                    _movement.ChangeTarget(newPlace.transform.position);
-                } 
+                    _mainLoop.ScoreAdd(_currentWorkPlace.ScoreAddPlace * _motivation.CurrentMotivation);
+                    _time = 0;
+                }
+                else
+                {
+                    _time += Time.deltaTime;
+                }
+            }
+            else if(!IsWork)
+            {
+
+                if(_currentWorkPlace == null && !_movement.IsMove)
+                {
+                    WorkPlace newPlace = _serchObject.SearchWorkPlace(transform.position);
+
+                    if(newPlace != null)
+                    {
+                        newPlace.SetWorker(this);
+                        _movement.ChangeTarget(newPlace.transform.position);
+                    } 
+                }
             }
         }
 
@@ -87,9 +99,33 @@ public class baseNPC : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!_movement.IsEndTarget)
+        if(!stunned)
         {
-            _movement.Move();
+            if(!going)
+            {
+                anim.Play("CharacterArmature|Run");
+                going = true;
+            }
+            if (!_movement.IsEndTarget)
+            {
+                _movement.Move();
+                _movement.RotateToTarget();
+            }
         }
+    }
+
+
+    public void Stun()
+    {
+        stunned = true;
+        going = false;
+        anim.Play("CharacterArmature|Death");
+        Invoke("UnStun", timeInactive);
+    }
+
+    public void UnStun()
+    {
+        stunned = false;
+        anim.Play("CharacterArmature|StandUp");
     }
 }
